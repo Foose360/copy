@@ -1,0 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+body {
+    font-family: arial;
+    font-size: 20px;
+}
+p {
+  color: black;
+  text-align: left;
+}
+
