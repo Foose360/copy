@@ -16,8 +16,13 @@ p {
 }
 
 .meat {
-    color: orange;
+    color: white;
     text-transform: uppercase;
     font-weight: bold;
 }
+#coolid {
+    background-color: black;
+}
 
+#idnamed {    
+}
