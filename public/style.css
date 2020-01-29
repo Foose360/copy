@@ -1,9 +1,11 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 
+
 body {
     font-family: arial;
     font-size: 20px;
     margin: 0 auto;
+    padding: 20px;
 }
 table {
     width: 80%;
@@ -13,10 +15,20 @@ table {
 
 li {
     height: 30px;
+    margin: 2px 0px;
+    padding: 2px 0px 2px;
+    
 }
-
 section {
     height: auto;
+    margin: 2px 0px;
+    padding: 2px 0px 2px;
+    
+}
+
+button {
+    margin: 20px;
+    padding: 20px;
 }
 
 p {
