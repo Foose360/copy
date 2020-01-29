@@ -7,10 +7,14 @@
 </head>
 <body>
   <main>
-    <section><h1>Welcome to BurgerHeaven Online</h1></section>
+    <h1>Welcome to BurgerHeaven Online</h1>
+    <header>
+      <img src="https://www.edubuntu.org/sites/default/files/docimages/wallpapers-oneiric/Momiji_Dream_by_Deacon_MacMillan-full.jpg">
+      </header>
     <div>This is where you execute burger selection</div>
     <h3>Select burger</h3>
-    <table>
+    <section class="meat" id="coolid">
+       <table>
       <thead>
 	<tr>
 	  <th>Double Mac Pac</th>
@@ -27,36 +31,20 @@
 </tr>
 <tbody>
   <tr>
-    <td> <ul>	
-	<section class="meat">
-	 
-	    <li>
-	    <span id="coolid">Mystery meat</li>
-	    </span>
-	 
-	</section>
+    <td>
+      <ul>	 	 
+	<li>
+	   Mystery meat</li>
 	<li>Ostrich eggs</li>
-	  <li>NON VEGAN</li>
-	  <section>
-	    
+	  <li>NON VEGAN</li>	    
 	      <li>
-	      <span id="idnamed">
 		Loads of gluten and lactose</li>
-	      </span>	      
-	    
-	  </section>
-	  <section>
 	    <li>A LOT of calories</li>
-	    </section>
     </ul> </td>
     <td>  <ul>
 	<li>May make you feel bloated</li>
 	<li>CONTAINS BEANS</li>
-	<section class="classname">
-	 <span>
 	      <li>Vegan friendly</li>
-	  </span>
-	  </section>
 	<li>No lactose or gluten</li>
       </ul>
     </td>
@@ -75,9 +63,13 @@
   <tr>
     <td colspan="2"></td>
 </table>
-<h2>Customer information</h2>
-<h3>Delivery information:</h3>
+    </span>
+</section>
 <section id="contact">
+<h2>Customer information</h2>
+<div>provide some information here</div>
+<h3>Delivery information:</h3>
+
   <form>
     <p>
       <label for="firstname">First name</label><br>
@@ -96,7 +88,7 @@
 	  <input type="text" id=house name="fn" required="required" placeholder="House number"/></br>    
     </p>			 
   </form>
-</section>
+
 <p>
   <label for="payment">Payment option</label><br />
   <select id="payment" name="pay">
@@ -115,7 +107,7 @@
   <button type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info</button>
 
 </form>
-
+</section>
 <hr>
 <footer>CoolBurgersTM </footer>
 </body>
