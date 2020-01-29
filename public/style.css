@@ -26,3 +26,21 @@ p {
 
 #idnamed {    
 }
+
+input[type="radio"] {
+    height: 1.2em;
+    width: 1.2em;
+}
+
+class:hover {
+    color:black;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+    color: blue;
+}
