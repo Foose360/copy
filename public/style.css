@@ -9,3 +9,15 @@ p {
   text-align: left;
 }
 
+.classname {
+    color: green;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.meat {
+    color: orange;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
