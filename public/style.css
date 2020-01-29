@@ -3,7 +3,22 @@
 body {
     font-family: arial;
     font-size: 20px;
+    margin: 0 auto;
 }
+table {
+    width: 80%;
+    height: 100px;
+    text-align: left;
+}
+
+li {
+    height: 30px;
+}
+
+section {
+    height: auto;
+}
+
 p {
   color: black;
   text-align: left;
