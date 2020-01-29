@@ -13,9 +13,14 @@ table {
     text-align: left;
 }
 header {
-    margin: 2px 0px;
-    padding: 2px 0px 2px;
-    opacity: 0.9;
+    
+    height: 100px;
+    overflow:hidden;
+    margin: 15px 20px;
+    padding: 20px 20px 20px;
+    opacity: 0.7;
+    background:  white url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tALMyG8Yc48GlLYBamn3e8wdhbn0TPZeMqN2LH01wXYcEgCO&s") repeat left top;
+    absolute: top;
 }
 
 li {
