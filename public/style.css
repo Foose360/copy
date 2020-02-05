@@ -1,124 +1,248 @@
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
-
-
-body {
-    font-family: arial;
-    font-size: 20px;
-    margin: 0 auto;
-    padding: 20px;
-}
-table {
-    width: 80%;
-    height: 100px;
-    text-align: left;
-}
-
-.selecttext {
-    text-align: center;
+@media screen and (max-width: 1200px) {
     
-}
-.wrapper {
-    display: grid;
-    grid-gap: 150px;
-    grid-template-columns: 200px 200px 200px;
-    background-color: black;
-    
-}
 
-.selection {
-    display: grid;
-    grid-gap: 150px;
-    grid-template-columns: 200px 200px 200px;
-    background-color: black;    
-}
+    body {
+	font-family: arial;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 20px;
+    }
+    table {
+	width: 80%;
+	height: 100px;
+	text-align: left;
+    }
 
-.box {
-    margin: auto;
-    border-radius: 0px;
-    border-color: black;
-    font-size: 80%;
-}
+    .selecttext {
+	text-align: center;
+	
+    }
+    .wrapper {
+	display: grid;
+	grid-gap: 150px;
+	grid-template-columns: 200px 200px 200px;
+	background-color: black;
+	
+    }
 
-.select {
-    margin: 0px;
-    border-radius: 0px;
-    border-color: black;
-    font-size: 100%;
-}
+    .selection {
+	display: grid;
+	grid-gap: 150px;
+	grid-template-columns: 200px 200px 200px;
+	background-color: black;    
+    }
 
-.a {
-    grid-column:  1/span 1;
-    grid-row: 1;
-}
-.b {
-    grid-column: 2 / span 1;
-    grid-row: 1;
-}
-.c {
-    grid-column: 3/ span 1;
-    grid-row:1;
-}
-header {
-    
-    height: 100px;
-    overflow:hidden;
-    margin: 15px 20px;
-    padding: 20px 20px 20px;
-    opacity: 0.7;
-    background:  white url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tALMyG8Yc48GlLYBamn3e8wdhbn0TPZeMqN2LH01wXYcEgCO&s") repeat left top;
-    absolute: top;
-}
+    .box {
+	margin: auto;
+	border-radius: 0px;
+	border-color: black;
+	font-size: 80%;
+    }
 
-section {
-    height: auto;
-    margin: 15px 20px;
-    padding: 20px 20px 20px;
-    border-style: dashed;
-    border-color: black;
-}
+    .select {
+	margin: 0px;
+	border-radius: 0px;
+	border-color: black;
+	font-size: 100%;
+    }
 
-button {
-    margin: 20px;
-    padding: 20px;
-}
+    .a {
+	grid-column:  1/span 1;
+	grid-row: 1;
+    }
+    .b {
+	grid-column: 2 / span 1;
+	grid-row: 1;
+    }
+    .c {
+	grid-column: 3/ span 1;
+	grid-row:1;
+    }
+    header {
+	
+	height: 100px;
+	overflow:hidden;
+	margin: 15px 20px;
+	padding: 20px 20px 20px;
+	opacity: 0.7;
+	background:  white url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tALMyG8Yc48GlLYBamn3e8wdhbn0TPZeMqN2LH01wXYcEgCO&s") repeat left top;
+	absolute: top;
+    }
 
-p {
-  color: black;
-  text-align: left;
-}
+    section {
+	height: auto;
+	margin: 15px 20px;
+	padding: 20px 20px 20px;
+	border-style: dashed;
+	border-color: black;
+    }
 
-.classname {
-    color: green;
-    text-transform: uppercase;
-    font-weight: bold;
-}
+    button {
+	margin: 20px;
+	padding: 20px;
+    }
 
-.meat {
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-#coolid {
-    background-color: black;
-}
+    p {
+	color: black;
+	text-align: left;
+    }
 
-#idnamed {    
-}
+    .classname {
+	color: green;
+	text-transform: uppercase;
+	font-weight: bold;
+    }
 
-input[type="radio"] {
-    height: 1.2em;
-    width: 1.2em;
-}
+    .meat {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+    }
+    #coolid {
+	background-color: black;
+    }
 
-class:hover {
-    color:black;
-}
+    #idnamed {    
+    }
 
-input:hover {
-    cursor: pointer;
-}
+    input[type="radio"] {
+	height: 1.2em;
+	width: 1.2em;
+    }
 
-button:hover {
-    cursor: pointer;
-    color: blue;
+    class:hover {
+	color:black;
+    }
+
+    input:hover {
+	cursor: pointer;
+    }
+
+    button:hover {
+	cursor: pointer;
+	color: blue;
+    }
+}
+@media (max-width: 2400px) and (min-width: 1301px) {
+
+    body {
+	font-family: arial;
+	font-size: 25px;
+	margin: 0 auto;
+	padding: 20px;
+    }
+    .selecttext {
+	font-size: 50px;
+	text-align: center;
+	
+    }
+    .wrapper {
+	display: grid;
+	grid-gap: 450px;
+	grid-template-columns: 350px 350px 350px;
+	background-color: black;
+	
+    }
+
+    .selection {
+	display: grid;
+	grid-gap: 450px;
+	grid-template-columns: 350px 350px 350px;
+	background-color: black;    
+    }
+
+    .box {
+	margin: auto;
+	border-radius: 0px;
+	border-color: black;
+	font-size: 80%;
+    }
+
+    .select {
+	margin: 0px;
+	border-radius: 0px;
+	border-color: black;
+	font-size: 100%;
+    }
+
+    .a {
+	grid-column:  1/span 1;
+	grid-row: 1;
+	width: 500px;
+    }
+    .b {
+	grid-column: 2 / span 1;
+	grid-row: 1;
+	width: 500px;
+    }
+    .c {
+	grid-column: 3/ span 1;
+	grid-row:1;
+	width: 500px;
+    }
+    header {
+	
+	height: 200px;
+	overflow:hidden;
+	margin: 15px 20px;
+	padding: 20px 20px 20px;
+	opacity: 0.7;
+	background:  white url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tALMyG8Yc48GlLYBamn3e8wdhbn0TPZeMqN2LH01wXYcEgCO&s") repeat left top;
+	absolute: top;
+    }
+
+    section {
+	height: auto;
+	margin: 15px 20px;
+	padding: 20px 20px 20px;
+	border-style: dashed;
+	border-color: black;
+    }
+
+    button {
+	margin: 20px;
+	padding: 20px;
+    }
+
+    p {
+	color: black;
+	text-align: left;
+    }
+
+    .classname {
+	color: green;
+	text-transform: uppercase;
+	font-weight: bold;
+    }
+
+    .meat {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+    }
+    #coolid {
+	background-color: black;
+    }
+
+    #idnamed {    
+    }
+
+    input[type="radio"] {
+	height: 1.2em;
+	width: 1.2em;
+    }
+
+    class:hover {
+	color:black;
+    }
+
+    input:hover {
+	cursor: pointer;
+    }
+
+    button:hover {
+	cursor: pointer;
+	color: blue;
+    }
 }
