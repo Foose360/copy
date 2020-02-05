@@ -25,3 +25,17 @@ let burger2 = new menuItem('Farmers bombastic bean patty', 'bloaty', 'gluten', '
 console.log(fetchName(burger2));
 let burger3 = new menuItem('Double Mac Pac', 'bloaty', 'gluten', 'vegetarian', 'lactose', '2000');
 console.log(fetchName(burger3));
+
+var x = document.createElement("Div");
+var t = document.createTextNode(fetchName(burger1));
+x.appendChild(t);
+document.body.appendChild(x);
+var x1 = document.createElement("Div");
+var t1 = document.createTextNode(fetchName(burger2))
+x1.appendChild(t1);
+document.body.appendChild(x1);
+var x2 = document.createElement("Div");
+var t2 = document.createTextNode(fetchName(burger3))
+x2.appendChild(t2);
+document.body.appendChild(x2);
+

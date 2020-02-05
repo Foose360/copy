@@ -1,8 +1,14 @@
-document.getElementById("myID").innerHTML = "Välj en burgare";
+var xD = fetchName(burger1);
+var xD1 = fetchName(burger2);
+var xD2 = fetchName(burger3);
 
 const vm = new Vue({
   el: '#myID',
   data: {
-    arbitraryVariableName: 'Välj en burgare'
+  	 items: [
+     { message: xD},,
+     { message: xD1 },
+     { message: xD2}
+     ]
   }
 })
