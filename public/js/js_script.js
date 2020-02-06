@@ -39,3 +39,42 @@ var t2 = document.createTextNode(fetchName(burger3))
 x2.appendChild(t2);
 document.body.appendChild(x2);
 
+burger1.stock = 1;
+burger2.stock = 0;
+burger3.stock = 5;
+
+let menu = [burger1, burger2, burger3];
+let myElement = document.getElementById("myID");
+for (let burger of menu)
+{
+    if (burger.stock > 0)
+    {
+        let listItem = document.createElement("li");
+        let listValue = document.createTextNode(burger.name);
+        listItem.appendChild(listValue);
+        if(burger.gluten > 0 || burger.lactose > 0){
+        let newOL = document.createElement("Ol");
+        let newItem = document.createElement("li");
+        if(burger.gluten > 0 && burger.lactose > 0){
+        let gluten = document.createTextNode("Contains gluten");
+        let lactose = document.createTextNode("Contains lactose");
+        let newItem1 = document.createElement("li");
+        newItem1.appendChild(lactose);
+        newOL.appendChild(newItem1);
+        newItem.appendChild(gluten);
+        }
+        else if(burger.gluten > 0){
+        let gluten = document.createTextNode("Contains gluten")
+        newItem.appendChild(lactose);
+        }
+          else {
+              let lactose = document.createTextNode("Contains lactose")
+          newItem.appendChild(lactose);
+          }
+        
+        newOL.appendChild(newItem);
+        listItem.appendChild(newOL);
+        }
+        myElement.appendChild(listItem);
+    }
+}
