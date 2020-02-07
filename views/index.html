@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script type="text/javascript" src="js/menu.js"> defer</script>
     <script src="js/js_script.js" defer>    
     </script>
     <script src="js/vue_script.js" defer>
-      </script>
+    </script>
     <header>
-       <script src="https://vuejs.org/js/vue.js"></script> 
+        
     <link rel="stylesheet" type="text/css" href="style.css">
     <p id="unique" </p> <!-- comment weee -->
        <title>Hamburger store!</title>      
@@ -24,71 +26,104 @@
    <section class="meat" id="coolid">
 </thead>
 <div class="wrapper" id="myID">
-  <div v-for="burger in menu" v-if="burger.stock > 0">
+  <div v-for="burger in food">
     {{ burger.name }}
-    <img v-bind:src="burger.imgSrc" height="300">
+    <img v-bind:src="burger.img" height="300">
 	 <div v-if="burger.lactose || burger.gluten">
       <li v-if="burger.lactose">
-        {{burger.lactose}}
+        Contains lactose
       </li>
-      <li v-if="burger.gluten"> {{burger.gluten}}
+      <li v-if="burger.gluten"> Contains gluten
       </li>
-    </div>
+	 </div>
+  <div>
   </div>
-</div>
-
 </tbody>
 </tr>
-<tfoot>
+<tfoot >
   <tr>
     <td colspan="2"></td>
     </span>
 </section>
-<section id="contact">
-<h2>Customer information</h2>
+<section id="info">
+    <div v-for="burger in food">
+    <input type="checkbox" v-bind:value="burger.name" v-model="checkednames">
+    <label id="yahoo" for="checkednames">Purchase {{burger.name}}</label>
+</div>
+    <div>
+  <h2>Customer information</h2>
+
+</div>
 <div>provide some information here</div>
 <h3>Delivery information:</h3>
-
+<div>
   <form>
     <p>
       <label for="firstname">First name</label><br>
-      <input type="text" id="firstname" name="fn" required="required" placeholder="First- and Last name"/> </br>
+      <input v-model="names" id="nameTextbox" placeholder="First- and Last name"/>
+ </br>
     </p>
     <p>
       <label for="email">E-mail<label><br>
-	  <input type="text" id=email name="fn" required="required" placeholder="E-mail address"/></br>    
+	  <input id="emailTextbox" v-model="email" id=email name="fn" required="required" placeholder="E-mail address"/>	
+	  </br>
     </p>
     <p>
       <label for="street">Street<label><br>
-	  <input type="text" id=street name="fn" required="required" placeholder="Street name"/></br>    
+	  <input v-model="street" id="streetTextbox" type="text" name="fn" required="required" placeholder="Street name"/> 
+	 
+	  </br>
     </p>
     <p>
       <label for="house">House<label><br>
-	  <input type="text" id=house name="fn" required="required" placeholder="House number"/></br>    
+	  <input v-model="house" id="houseTextbox" type="text" id=house name="fn" required="required" placeholder="House number"/>
+	 
+</br>    
     </p>			 
   </form>
 
 <p>
-  <label for="payment">Payment option</label><br />
-  <select id="payment" name="pay">
-    <option>Swish </option>
-    <option>Visa</option>
-    <option selected="selected"> PayPal</option>
-    <option>Master Card</option>
+  <label for="payment">Payment option</label>
+  <select v-model="selected" name="pay">
+    <option v-for="option in options1" v-bind:value="option.value">
+    {{ option.text }}
+  </option>  
   </select>
 </p>
 <form>
-  <input checked="checked "type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="other"> Other
+  <input type="radio" value="male" v-model="picked"> Male<br>
+  <input type="radio" value="female" v-model="picked"> Female<br>
+  <input type="radio" value="other" v-model="picked"> Other
+  <span>Picked: {{ picked }}</span>
 </form>
-<form>
-  <button type="submit"><img src="./static/1md034/img/html/image_button.png" /> Send Info</button>
+<form id="buttonparent">
+  <button v-on:click="func('{{checkednames}}')" id="button"> Send Info</button
 
 </form>
+<div>
+ First-and lastname: {{names}}
+</div>
+<div>
+ Email: {{email}}
+</div>
+<div>
+ Street: {{street}}
+</div>
+<div>
+  House: {{house}}
+  </div>
+<div>
+ Payment:  {{selected}}
+</div>
+<div>
+ Gender:  {{picked}}
+</div>
+
 </section>
 <hr>
 <footer>CoolBurgersTM </footer>
+
+  </div>
 </body>
 </html>
 
