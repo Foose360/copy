@@ -1,63 +1,86 @@
+'use strict';
+const socket = io();
 
-
-const vm = new Vue({
+const vdm = new Vue({
     el: '#myID',
-     data: {
-      food
-     }
-})
-
-new Vue({
-    el: '#info',
     data: {
 	food,
-	checkednames: [],
-	    names: '',
-	    email: '',
-	    street: '',
-	    house: '',
-	    selected: 'Master Card',
-	    options1: [
-		{ text: 'Visa', value: 'Visa' },
-		{ text: 'Master Card', value: 'Master Card' },
-		{ text: 'Swish', value: 'Swish' },
-		{ text: 'PayPal', value: 'PayPal'}
-	    ],
-            picked: '',
-	    options: [
-		{ text: 'Male', value: 'Male'},
-		{ text: 'Female', value: 'Female'},
-		{ text: 'Other', value: 'Other'}
-	    ]
-    
-    } })
+    },
+});
 
-new Vue ({
-    el: '#button',
-    methods: {
-	func: function(message) {
-	    if (message != null) {
-		alert('you purchased' + message + '!');
+const infod = new Vue({
+    el: '#info',
+    data: {
+	currentOrders: {
+	    details: {x:0, y:0}},
+    orderInfo: {
+    },
+	orders: {},
+	iterator: 0,
+	food,
+	func: '',
+	checkednames: [],
+	names: '',
+	email: '',
+	selected: 'Master Card',
+	options1: [
+	    { text: 'Visa', value: 'Visa' },
+	    { text: 'Master Card', value: 'Master Card' },
+	    { text: 'Swish', value: 'Swish' },
+	    { text: 'PayPal', value: 'PayPal'}
+	],
+        picked: '',
+	options: [
+	    { text: 'Male', value: 'Male'},
+	    { text: 'Female', value: 'Female'},
+	    { text: 'Other', value: 'Other'}
+	],	
+	func: function() {
+	    
+	    if (infod.checkednames.length == 0){
+		
+		alert('you didnt order anything!')
 	    }
+	    else {
+		infod.getNext();
+		socket.emit('addOrder', {
+		    
+		    details: {
+			x: infod.currentOrders.details.x,
+			y: infod.currentOrders.details.y
+		    },
+		    orderItems: infod.checkednames,
+		    orderId: infod.iterator,
+			name: infod.names,
+			emails: infod.email,
+			gender: infod.picked,
+			payment: infod.selected},
+			   )}
+	},
+    },
+    methods: {
+	getNext: function() {
+	    infod.iterator = infod.iterator + 1;
+	    return infod.iterator;
+	},
+	
+	
+	displayOrder: function(event) {
+	    let offset = {
+		x: event.currentTarget.getBoundingClientRect().left,
+		y: event.currentTarget.getBoundingClientRect().top,
+	    };
+	    infod.currentOrders = {
+ 		details: {
+		 
+		    x: event.clientX - 10 - offset.x,
+		    y: event.clientY - 10 - offset.y,
+		    
+		},
+
+	    };
+	    
 	}
     }
+
 })
-
-/*
-<ol id="myID">
-     <li v-for="burger in menu" v-if="burger.stock > 0">
-        {{ burger.name }}
-     
-     <ol v-if="burger.lactose || burger.gluten">
-       <li v-if="burger.lactose">
-         {{burger.lactose}}
-       </li>
-       <li v-if="burger.gluten"> {{burger.gluten}}
-       </li>
-         </ol>
-       </li>
-</ol>
-
-*/
-
-

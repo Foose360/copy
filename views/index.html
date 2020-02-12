@@ -2,128 +2,127 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://vuejs.org/js/vue.js"></script>
-    <script type="text/javascript" src="js/menu.js"> defer</script>
-    <script src="js/js_script.js" defer>    
-    </script>
-    <script src="js/vue_script.js" defer>
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="js/js_script.js" defer></script>  
+    <script src="js/menu.js" type="text/javascript"> defer</script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="/vue/vue.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+    <title>Hamburger store!</title>
     <header>
-        
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <p id="unique" </p> <!-- comment weee -->
-       <title>Hamburger store!</title>      
-</head>
-<body>
-  <main>
-    <h1>Welcome to BurgerHeaven Online</h1>
-    
+      <link rel="stylesheet" type="text/css" href="style.css">
+     <h1>Welcome to BurgerHeaven Online</h1>      
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tALMyG8Yc48GlLYBamn3e8wdhbn0TPZeMqN2LH01wXYcEgCO&s">
-</header>
- <tbody>		 	 
-   <div>This is where you execute burger selection</div>
-   <h3 class="selecttext">Select burger</h3>
-   <section class="meat" id="coolid">
-</thead>
+    </header>
+  </head>
+  <body>      		 	 
+	<div>This is where you execute burger selection</div>
+	<h3 class="selecttext">Select burger</h3>
+	<section class="meat" id="coolid">
 <div class="wrapper" id="myID">
   <div v-for="burger in food">
     {{ burger.name }}
-    <img v-bind:src="burger.img" height="300">
-	 <div v-if="burger.lactose || burger.gluten">
+    <img v-bind:src="burger.img" height="200">
+    <li>
+      {{burger.kCal}} kCal
+    </li>
+    <li v-if="burger.bloaty">
+      Only for brave people
+      </li>
+    <div v-if="burger.lactose || burger.gluten">
       <li v-if="burger.lactose">
         Contains lactose
       </li>
       <li v-if="burger.gluten"> Contains gluten
       </li>
-	 </div>
-  <div>
-  </div>
-</tbody>
+      <div>
+	</div>
+    </div>
+    <div>
+    </div>
 </tr>
-<tfoot >
   <tr>
     <td colspan="2"></td>
-    </span>
 </section>
 <section id="info">
-    <div v-for="burger in food">
+  <div v-for="burger in food">
     <input type="checkbox" v-bind:value="burger.name" v-model="checkednames">
     <label id="yahoo" for="checkednames">Purchase {{burger.name}}</label>
-</div>
-    <div>
-  <h2>Customer information</h2>
-
-</div>
-<div>provide some information here</div>
-<h3>Delivery information:</h3>
-<div>
-  <form>
-    <p>
-      <label for="firstname">First name</label><br>
-      <input v-model="names" id="nameTextbox" placeholder="First- and Last name"/>
+  </div>
+  <h4> Customer information </h4>
+  <div>Provide some information here</div>
+  <h3>Delivery information:</h3>
+  <div>
+    <form>
+      <p>
+	<label for="firstname">First name</label><br>
+	<input v-model="names" id="nameTextbox" placeholder="First- and Last name"/>
  </br>
-    </p>
-    <p>
-      <label for="email">E-mail<label><br>
-	  <input id="emailTextbox" v-model="email" id=email name="fn" required="required" placeholder="E-mail address"/>	
+      </p>
+      <p>
+	<label for="email">E-mail<label><br>
+	    <input id="emailTextbox" v-model="email" id=email name="fn" required="required" placeholder="E-mail address"/>	
 	  </br>
-    </p>
-    <p>
-      <label for="street">Street<label><br>
-	  <input v-model="street" id="streetTextbox" type="text" name="fn" required="required" placeholder="Street name"/> 
-	 
-	  </br>
-    </p>
-    <p>
-      <label for="house">House<label><br>
-	  <input v-model="house" id="houseTextbox" type="text" id=house name="fn" required="required" placeholder="House number"/>
-	 
-</br>    
-    </p>			 
-  </form>
+      </p>
+      
+</p>			 
+</form>
 
 <p>
-  <label for="payment">Payment option</label>
+  <label for="payment">Payment option</label><br>
   <select v-model="selected" name="pay">
     <option v-for="option in options1" v-bind:value="option.value">
-    {{ option.text }}
-  </option>  
+      {{ option.text }}
+    </option>  
   </select>
 </p>
 <form>
   <input type="radio" value="male" v-model="picked"> Male<br>
   <input type="radio" value="female" v-model="picked"> Female<br>
   <input type="radio" value="other" v-model="picked"> Other
-  <span>Picked: {{ picked }}</span>
+ 
 </form>
-<form id="buttonparent">
-  <button v-on:click="func('{{checkednames}}')" id="button"> Send Info</button
-
-</form>
-<div>
- First-and lastname: {{names}}
-</div>
-<div>
- Email: {{email}}
-</div>
-<div>
- Street: {{street}}
-</div>
-<div>
-  House: {{house}}
+<body>
+  <h4>Please indicate point of delivery</h4>
+  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+  <div class="view-box">
+    <div id="dots" v-on:click="displayOrder">
+      <div
+          v-bind:style="{left: currentOrders.details.x + 'px', top: currentOrders.details.y + 'px'}">    
+	  T
+        </div>
+    </div>
   </div>
-<div>
- Payment:  {{selected}}
-</div>
-<div>
- Gender:  {{picked}}
-</div>
+</body>
 
+  <button id="button" v-on:click="func"> Send Info </button>
+
+  <hr>
+  <h3> Customer details </h3>
+<div>
+  First-and lastname: {{names}}
+</div>
+<div>
+  Email: {{email}}
+</div>
+<div>
+  Payment:  {{selected}}
+</div>
+<div>
+  Gender:  {{picked}}
+</div>
+<h4> Orders selected </h4>
+<div  v-for="food in checkednames">
+ <li> {{food}}</li>
+  </div>
 </section>
+
+</div>
+</body>
 <hr>
 <footer>CoolBurgersTM </footer>
 
-  </div>
-</body>
 </html>
 
